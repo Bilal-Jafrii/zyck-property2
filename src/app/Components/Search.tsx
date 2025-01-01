@@ -21,7 +21,7 @@ const Search = () => {
     }, 1000)
 
   return (
-    <div className='p-4 flex justify-center items-center bg-gradient-to-br from-sky-400 to-indigo-500'>
+    <div className='p-4 flex justify-center items-center bg-gradient-to-br from-green-400 to-sky-300'>
       <Input
       onChange={(e) => {handleChange(e.target.value)}}
       className='w-96 shadow'

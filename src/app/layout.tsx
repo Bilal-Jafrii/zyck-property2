@@ -5,6 +5,8 @@ import { Providers } from "./Components/provider";
 import Appbar from "./Components/Appbar";
 import SignInPanel from "./Components/signInPanel";
 import { ToastContainer } from "react-toastify";
+import TopBar from "./Components/Topbar";
+import Footer from "./Components/Footer";
 
 
 const geistSans = Geist({
@@ -22,22 +24,21 @@ export const metadata: Metadata = {
   description: "Best Real Estate Website",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          <Appbar>
+        <TopBar/>
+          <Appbar isAuthenticated={true}>
             <SignInPanel/>
           </Appbar>
         {children}
         <ToastContainer/>
+        <Footer/>
         </Providers>
       </body>
     </html>
